@@ -11,8 +11,12 @@ module SimpleForm
       class_option :template_engine
 
       def copy_form_file
+        # form partial
         filename = filename_with_extensions("_form")
         template template_filename_with_extensions("_form"), File.join("app/views", controller_file_path, filename)
+        # shared form errors partial
+        filename = filename_with_extensions("_form_errors")
+        template template_filename_with_extensions("_form_errors"), File.join("app/views", "shared", filename)
       end
 
       protected

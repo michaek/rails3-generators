@@ -1,0 +1,10 @@
+<%% if form_object.errors.any? -%>
+<div id="errorExplanation">
+  <h2><%%= "#{pluralize(form_object.errors.count, "error")} prohibited this #{form_object.name.titleize} from being saved:" %></h2>
+  <ul>
+    <%%- form_object.errors.full_messages.each do |msg| -%>
+    <li><%%= msg %></li>
+    <%%- end -%>
+  </ul>
+</div>
+<%% end -%>
