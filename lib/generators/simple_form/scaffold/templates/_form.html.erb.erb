@@ -1,4 +1,4 @@
-<%%= simple_form_for @<%= file_name %> do |form| %>
+<%%= simple_form_for @<%= file_name %>, :url => <%= file_name %>.new_record? ? collection_path : resource_path do |form| %>
   <%%= render :partial => 'shared/form_errors', :locals => {:form_object => @project} %>
 
   <%- for attribute in attributes -%>
